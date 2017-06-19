@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}Flaskr - Login{% endblock %}
+
+{% block head %}
+  {{ super() }}
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var obtn = document.getElementById('submit-button');
+    if (obtn != null) {
+      if (getUrlParam('type') == 1) obtn.innerText = "Login";
+      else obtn.innerText = "Register";
+    }
+  });
+  </script>
+
+  <style type="text/css">
+  .form-horizontal {
+    margin-top: 100px;
+  }
+  .control-group {
+    width: 100%;
+  }
+  .my-vertical-fill {
+    width: 100%;
+  }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <form class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Email:</label>
+            <div class="controls">
+              <input class="my-vertical-fill" id="inputEmail" type="text" />
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">Password:</label>
+            <div class="controls">
+              <input class="my-vertical-fill" id="inputPassword" type="password" />
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox"><input type="checkbox" /> Remember me</label>
+              <div class="text-right">
+                <button type="submit" class="btn btn-danger" id="submit-button" style="width: 90px">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
