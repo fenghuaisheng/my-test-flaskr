@@ -37,7 +37,7 @@ def create_app(config_name):
     # register blueprints
     from .dashboard import dashboard as dashboard_bp
     app.register_blueprint(dashboard_bp, url_prefix='/dashboard')
-    #from .pages import pages as pages_bp
-    #app.register_blueprint(pages_bp)
+    from .pages import pages as pages_bp
+    app.register_blueprint(pages_bp)
     
     return app
