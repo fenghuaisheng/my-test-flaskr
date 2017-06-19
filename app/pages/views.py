@@ -8,7 +8,11 @@ from . import pages
 # from ./form.py import a function
 #from .form import proc_name
 
-@pages.route('/pages')
+@pages.route('/')
 def index():
-    return "welcome to pages!"
+    return render_template('pages/docs.html')
+
+@pages.route('/login')
+def login():
+    return render_template('pages/login.html')
 
