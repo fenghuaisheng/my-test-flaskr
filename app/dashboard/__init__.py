@@ -4,6 +4,6 @@ Define blueprint "dashboard"
 
 from flask import Blueprint
 
-dashboard = Blueprint('dashboard', __name__)
+dashboard = Blueprint('dashboard', __name__, url_prefix='/dashboard')
 
 from . import errors, views
