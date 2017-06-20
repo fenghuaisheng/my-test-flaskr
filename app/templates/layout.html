@@ -36,14 +36,6 @@
   <![endif]-->
 
   <script type="text/javascript">
-    function btn_signs_click(e) {
-      if (e.id == "signin") {
-        alert("signin")
-      }
-      else {
-        alert("signup")
-      }
-    }
     function getUrlParam(name) {
       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
       var r = window.location.search.substr(1).match(reg); //匹配目标参数
@@ -55,6 +47,9 @@
   </script>
 
   <style type="text/css">
+    .body {
+      text-align: center;
+    }
     .main-content {
       margin: 80px;
     }
@@ -104,8 +99,8 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
         {% if not session.logged_in %}
-          <a class='btn btn-success' role='button' id="signin" onclick="btn_signs_click(this);" href="{{ url_for('pages.login', type=1) }}">Sign in</a>
-          <a class='btn btn-primary' role='button' id="signup" onclick="btn_signs_click(this);" href="{{ url_for('pages.login', type=2) }}">Sign up</a>
+          <a class='btn btn-success' role='button' id="signin" href="{{ url_for('pages.login', type=1) }}">Sign in</a>
+          <a class='btn btn-primary' role='button' id="signup" href="{{ url_for('pages.login', type=2) }}">Sign up</a>
         {% else %}
           <a class='btn btn-primary' role='button'>Sign out</a>
         {% endif %}
