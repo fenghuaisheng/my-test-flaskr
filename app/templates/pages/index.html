@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}Feng - Home{% endblock %}
+
+{% block body %}
+  <h1> 
+    Welcome To Our Site!
+    {% if current_user.is_authenticated %}
+      {{ current_user.username }}
+    {% endif %}
+  </h1>
+{% endblock %}

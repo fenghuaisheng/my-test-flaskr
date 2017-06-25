@@ -1,7 +1,8 @@
 import os
 
 class BaseConfig:
-    SECRET = os.getenv("SECRET_KEY", "default secret key")
+    DATABASE = "blog.db"
+    SECRET_KEY = "guess what"
     ITEMS_PER_PAGE = 10
 
 class DevelopmentConfig(BaseConfig):

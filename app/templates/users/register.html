@@ -1,0 +1,54 @@
+{% from "users/_formhelpers.html" import render_field %}
+
+{% extends "layout.html" %}
+
+{% block title %}Flaskr - Login{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <script type="text/javascript">
+  </script>
+
+  <style type="text/css">
+  .login-div {
+    text-align: center;
+    width: 100%;
+  }
+  .center {
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 350px;
+  }
+  .vertical-fill {
+    width: 100%;
+  }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <div class="container login-div">
+    <div class="well well-large center">
+      <!---- form ---->
+      <form action="{{ url_for('users.register') }}" method="POST">
+        {{ form.csrf_token }}
+        <!-- username -->
+        <!-- render_field includes label and args, so form.username.label not needed here -->
+        <p>{{ render_field(form.username, class="vertical-fill") }}</p>
+        <!-- email -->
+        <!-- render_field includes label and args, so form.email.label not needed here -->
+        <p>{{ render_field(form.email, class="vertical-fill") }}</p>
+        <!-- password -->
+        <!-- render_field includes label and args, so form.password.label not needed here -->
+        <p>{{ render_field(form.password, class="vertical-fill") }}</p>
+        <!-- passwordex -->
+        <!-- render_field includes label and args, so form.passwordex.label not needed here -->
+        <p>{{ render_field(form.passwordex, class="vertical-fill") }}</p>
+        </br></br>
+        <!-- submit -->
+        <input type="submit" value="Submit"/>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
